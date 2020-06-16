@@ -1,0 +1,38 @@
+<idea-plugin>
+  <id>com.bluewhale.mybatis.log.query.formatter</id>
+  <name>MyBatis Sql Query Log Binder</name>
+  <version>1.0</version>
+  <vendor email="bgcho98@gmail.com" >bluewhale</vendor>
+
+  <description><![CDATA[
+  mybatis 로 남는 쿼리 로그에서 쿼리와 파라미터부분을 합쳐주는 플러그인. <br>
+  사용 방법 <br>
+  에디터 창에서 로그를 셀력션 한 이후 "Tools" > "Bind Query Log"  기능을 실행 하면, <br>
+  클립보드로 결과를 카피해준다. <br>
+  한번에 한 쿼리만 가능함 <br>
+  ]]></description>
+
+  <change-notes><![CDATA[
+  <br> 1.0
+  <br> -- 최초 버전
+]]></change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="MyBatisQueryLog.BindAction" class="QueryBindAction" text="Bind Query Log">
+      <add-to-group group-id="ToolsMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
