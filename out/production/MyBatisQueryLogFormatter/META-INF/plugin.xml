@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.bluewhale.mybatis.log.query.formatter</id>
   <name>MyBatis Sql Query Log Binder</name>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <vendor url="https://github.com/bgcho98/MyBatisQueryLogFormatter" email="bgcho98@gmail.com" >bluewhale</vendor>
 
   <description><![CDATA[
@@ -17,7 +17,10 @@
   <change-notes><![CDATA[
   <br> 1.0
   <br> -- Initial release
-]]></change-notes>
+  <br> 1.0.1
+  <br> -- Add Description
+]]>
+  </change-notes>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
