@@ -2,19 +2,21 @@
   <id>com.bluewhale.mybatis.log.query.formatter</id>
   <name>MyBatis Sql Query Log Binder</name>
   <version>1.0</version>
-  <vendor email="bgcho98@gmail.com" >bluewhale</vendor>
+  <vendor url="https://github.com/bgcho98/MyBatisQueryLogFormatter" email="bgcho98@gmail.com" >bluewhale</vendor>
 
   <description><![CDATA[
-  mybatis 로 남는 쿼리 로그에서 쿼리와 파라미터부분을 합쳐주는 플러그인. <br>
-  사용 방법 <br>
-  에디터 창에서 로그를 셀력션 한 이후 "Tools" > "Bind Query Log"  기능을 실행 하면, <br>
-  클립보드로 결과를 카피해준다. <br>
-  한번에 한 쿼리만 가능함 <br>
-  ]]></description>
+  A plugin that combines query and parameter parts from the remaining query log with mybatis. <br>
+  <br>
+  Usage: <br>
+  If you execute "Tools"> "Bind Query Log" function after selecting the log in the editor window, <br>
+  Copy the result to the clipboard. <br>
+  Only one query at a time is possible <br>
+  ]]>
+  </description>
 
   <change-notes><![CDATA[
   <br> 1.0
-  <br> -- 최초 버전
+  <br> -- Initial release
 ]]></change-notes>
 
   <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
