@@ -32,13 +32,23 @@ public class QueryBinder {
 										.map(s -> new Parameter(s))
 										.map(v -> v.getBindedValue())
 										.collect(Collectors.toList());
-		String bindedQuery = SqlFormatter.format(queryString, parameters);
+		String bindedQuery = bindParameters(queryString, parameters);
+
+		String formattedQuery = SqlFormatter.format(bindedQuery);
 
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-		StringSelection contents = new StringSelection(bindedQuery);
+		StringSelection contents = new StringSelection(formattedQuery);
 		clipboard.setContents(contents, null);
 
-		return bindedQuery;
+		return formattedQuery;
+	}
+
+	private String bindParameters(String queryString, List<String> parameters) {
+		for (String parameter: parameters) {
+			queryString = queryString.replaceFirst("\\?", parameter);
+		}
+
+		return queryString;
 	}
 
 	/*
@@ -50,7 +60,12 @@ public class QueryBinder {
 	}
 
 	private String getQueryString(BufferedReader br) throws IOException {
-		return extractByStartString(br, "Preparing:");
+		String line = extractByStartString(br, "Preparing:");
+		if (line.startsWith("--")) {
+			return line.split(" ", 3)[2];
+		}
+
+		return line;
 	}
 
 	private String extractByStartString(BufferedReader br, String startString) throws IOException {
